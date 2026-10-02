@@ -1,0 +1,58 @@
+:root {
+  --bg: #f7f5f1;
+  --card: #ffffff;
+  --ink: #1b1a22;
+  --muted: #5d5a68;
+  --line: rgba(27, 26, 34, 0.12);
+  --accent: #c25a12;
+  --accent-2: #0f8f72;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #05070f;
+    --card: #0d1120;
+    --ink: #f2efe9;
+    --muted: #a3a0b0;
+    --line: rgba(255, 255, 255, 0.12);
+    --accent: #ffb35c;
+    --accent-2: #3ef2c6;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #05070f;
+  --card: #0d1120;
+  --ink: #f2efe9;
+  --muted: #a3a0b0;
+  --line: rgba(255, 255, 255, 0.12);
+  --accent: #ffb35c;
+  --accent-2: #3ef2c6;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+main { max-width: 720px; margin: 0 auto; padding: 40px 16px 64px; }
+header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+header img { width: 64px; height: 64px; border-radius: 16px; box-shadow: 0 8px 24px -10px rgba(0, 0, 0, 0.5); }
+header h1 { margin: 0; font-size: 28px; line-height: 1.15; letter-spacing: -0.02em; }
+header p { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
+nav a {
+  padding: 6px 14px; border-radius: 999px; border: 1px solid var(--line);
+  color: var(--ink); text-decoration: none; font-size: 14px; font-weight: 600;
+}
+nav a[aria-current="page"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.summary {
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+  padding: 18px 20px; margin-bottom: 28px;
+}
+.summary strong { color: var(--accent-2); }
+h2 { font-size: 20px; margin: 32px 0 8px; letter-spacing: -0.01em; }
+h3 { font-size: 16px; margin: 20px 0 4px; }
+p, li { color: var(--ink); }
+ul { padding-left: 22px; }
+a { color: var(--accent); }
+footer { margin-top: 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); padding-top: 16px; }
